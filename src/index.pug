@@ -1,0 +1,17 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Мой сайт
+    link(rel="stylesheet" href="styles/main.scss")
+    script(src="script.js" defer)
+
+  body
+    include ./components/header/header.pug
+
+    main
+      p Это базовая структура страницы на Pug.
+
+    footer
+      p © 2025 Все права защищены.
