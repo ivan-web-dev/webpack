@@ -2,5 +2,3 @@
 document.addEventListener("DOMContentLoaded", () => {
 	console.log("Header загружен!");
 });
-
-import "./header.scss";
