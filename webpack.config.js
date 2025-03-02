@@ -25,7 +25,7 @@ const componentPugs = getPugFiles(componentsDir);
 module.exports = {
 	mode: "development",
 	entry: {
-		main: "./src/scripts/main.js",
+		main: "./src/main.js",
 		// Подключаем SCSS-файлы компонентов
 		...componentPugs.reduce((entries, file) => {
 			const scssPath = path.join(componentsDir, file.replace(/\.pug$/, ".scss"));
@@ -62,6 +62,20 @@ module.exports = {
 					options: {
 						presets: ["@babel/preset-env"],
 					},
+				},
+			},
+			{
+				test: /\.(png|jpe?g|gif|svg|webp)$/i,
+				type: "asset/resource",
+				generator: {
+					filename: "images/[name][ext]",
+				},
+			},
+			{
+				test: /\.(woff2?|eot|ttf|otf)$/i,
+				type: "asset/resource",
+				generator: {
+					filename: "fonts/[name][ext]",
 				},
 			},
 		],
